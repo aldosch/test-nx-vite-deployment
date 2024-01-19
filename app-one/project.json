@@ -1,0 +1,68 @@
+{
+  "name": "app-one",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "app-one/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/app-one"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "app-one:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "app-one:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "app-one:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "app-one:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "app-one:build:development"
+        },
+        "production": {
+          "buildTarget": "app-one:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../coverage/app-one"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": []
+}
