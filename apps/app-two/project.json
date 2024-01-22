@@ -1,7 +1,7 @@
 {
   "name": "app-two",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "app-two/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/app-two/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/app-two"
+        "outputPath": "dist/apps/app-two"
       },
       "configurations": {
         "development": {
@@ -56,7 +56,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../coverage/app-two"
+        "reportsDirectory": "../../coverage/apps/app-two"
       }
     },
     "lint": {

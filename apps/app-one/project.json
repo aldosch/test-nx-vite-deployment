@@ -1,7 +1,7 @@
 {
   "name": "app-one",
-  "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "app-one/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/app-one/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/app-one"
+        "outputPath": "dist/apps/app-one"
       },
       "configurations": {
         "development": {
@@ -56,7 +56,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../coverage/app-one"
+        "reportsDirectory": "../../coverage/apps/app-one"
       }
     },
     "lint": {
