@@ -1,3 +1,6 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "buildCommand": "cd ../.. && pnpm exec nx run app-one:build --configuration=production",
+  "outputDirectory": "../../dist/apps/app-one",
+  "installCommand": "pnpm install"
 }
